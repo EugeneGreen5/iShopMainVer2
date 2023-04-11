@@ -1,0 +1,32 @@
+version: '3.4'
+
+networks:
+  deploy-guide-dev:
+    driver: bridge
+
+services:
+  ishopmainver2:
+    container_name: iShopMain
+    image: ${DOCKER_REGISTRY-}ishopmainver2
+    build:
+      context: .
+      dockerfile: iShopMainVer2/Dockerfile
+    networks:
+     - deploy-guide-dev
+    depends_on:
+     - iShopDataBase
+  iShopDataBase:
+    image: postgres:15.2
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: iShopDataBase
+    ports:
+     - "5432:5432"
+    networks:
+     - deploy-guide-dev
+    volumes:
+     - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data: 
