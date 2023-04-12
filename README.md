@@ -1,6 +1,6 @@
 # iShopMainVer2
 
-docker-compose up -d
+docker-compose up --build
 
 API:
 
