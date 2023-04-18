@@ -1,5 +1,4 @@
-﻿using iShopMain.Models.Entity.UserInfo;
-
+﻿
 namespace iShopMain.Repositories.User
 {
     public interface IRepository<T> : IDisposable

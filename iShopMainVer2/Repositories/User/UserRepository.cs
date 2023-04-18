@@ -2,7 +2,6 @@
 using iShopMain.Models.Entity.UserInfo;
 using iShopMain.Repositories.User;
 using Microsoft.EntityFrameworkCore;
-using System.Threading;
 
 namespace iShopMain.Repositories
 {

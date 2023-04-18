@@ -1,14 +1,11 @@
-﻿using iShopMain.Data;
-using iShopMain.Helpers;
-using iShopMain.Models.Dto;
+﻿using iShopMain.Models.Dto;
 using iShopMain.Models.Dto.RequestDto;
-using iShopMain.Models.Entity.UserInfo;
-using iShopMain.Repositories.User;
 using iShopMain.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace iShopMain.Controllers
 {
+    
     [ApiController]
     [Route("/api/users")]
     public class UserController : ControllerBase
@@ -35,6 +32,17 @@ namespace iShopMain.Controllers
         public async Task<ActionResult<UserRequestDto>> CheckUserAsync(AuthorizationUserDto newUser)
         {
             return await _service.isAuthorizationAsync(newUser);
+        }
+
+        [HttpGet("accessdenied")]
+        public ActionResult<UserRequestDto> UnauthorizedUserAsync()
+        {
+            var error = new UserRequestDto()
+            {
+                CodeRequest = 403,
+                MessageRequest = "Access Denied"
+            };
+            return error;
         }
     }
 }

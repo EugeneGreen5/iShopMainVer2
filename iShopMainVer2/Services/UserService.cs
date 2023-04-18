@@ -4,9 +4,7 @@ using iShopMain.Models.Dto.RequestDto;
 using iShopMain.Models.Entity.UserInfo;
 using iShopMain.Repositories.User;
 using iShopMainVer2.Repositories.User;
-using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
-using System.Reflection.Metadata.Ecma335;
-using System.Threading;
+
 
 namespace iShopMain.Services
 {
