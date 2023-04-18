@@ -3,6 +3,7 @@ using iShopMain.Models.Dto;
 using iShopMain.Models.Dto.RequestDto;
 using iShopMain.Models.Entity.UserInfo;
 using iShopMain.Repositories.User;
+using iShopMainVer2.Repositories.User;
 using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
 using System.Reflection.Metadata.Ecma335;
 using System.Threading;
@@ -14,14 +15,17 @@ namespace iShopMain.Services
         private readonly IRepository<AppUser> _dbUser;
         private readonly IRepository<Account> _dbAccount;
         private readonly IRepository<Information> _dbInformation;
+        private readonly IRoleRepository _dbRole;
 
         public UserService(IRepository<AppUser> dbUser,
             IRepository<Account> dbAccount,
-            IRepository<Information> dbInformation)
+            IRepository<Information> dbInformation,
+            IRoleRepository dbRole)
         {
             _dbUser = dbUser;
             _dbAccount = dbAccount;
             _dbInformation = dbInformation;
+            _dbRole = dbRole;
         }
 
         public async Task<UserRequestDto> InitializeAsync(IDto newUserDto)
@@ -49,7 +53,8 @@ namespace iShopMain.Services
             account.Login = newUser.Email;
             account.Password = GenerateSHA512.Create(newUser.Password);
 
-            user.RoleId = 0;
+            var role = await _dbRole.GetRoleAsync("user");
+            user.RoleId = role.Id;
 
             var information = new Information();
             user.InformationId = information.Id;

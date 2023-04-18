@@ -12,6 +12,7 @@ RUN dotnet restore "iShopMainVer2/iShopMainVer2.csproj"
 #RUN dotnet dev-certs https --clean
 #RUN dotnet dev-certs https -ep ./conf.d/https/dev_cert.pfx -p password123
 #RUN dotnet dev-certs https --trust
+run dotnet user-secrets -p iShopMainVer2\iShopMainVer2.csproj set "Kestrel:Certificates:Development:Password" "password123"
 COPY . .
 WORKDIR "/src/iShopMainVer2"
 #RUN dotnet build "iShopMainVer2.csproj" -c Release -o /app/build

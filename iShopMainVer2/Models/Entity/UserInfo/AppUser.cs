@@ -10,7 +10,7 @@ namespace iShopMain.Models.Entity.UserInfo
         public Guid Id { get; set; }
         public virtual Guid AccountId { get; set; }
         public virtual Guid InformationId { get; set; }
-        public virtual int RoleId { get; set; }
+        public virtual Guid RoleId { get; set; }
 
         public AppUser()
         {

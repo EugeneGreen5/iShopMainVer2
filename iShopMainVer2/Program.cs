@@ -3,6 +3,7 @@ using iShopMain.Models.Entity.UserInfo;
 using iShopMain.Repositories;
 using iShopMain.Repositories.User;      
 using iShopMain.Services;
+using iShopMainVer2.Repositories.User;
 using Microsoft.EntityFrameworkCore;
  
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,7 @@ builder.Services.AddScoped<ApplicationDbContext>();
 builder.Services.AddScoped<IRepository<AppUser>, UserRepository>();
 builder.Services.AddScoped<IRepository<Account>, AccountRepository>();
 builder.Services.AddScoped<IRepository<Information>, InformationRepository>();
+builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IService, UserService>();
 
 

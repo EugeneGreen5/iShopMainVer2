@@ -12,7 +12,8 @@ namespace iShopMain.Data
         public DbSet<Role> roles { get; set; }
         public ApplicationDbContext(DbContextOptions options) 
             : base(options)
-        {
+        { 
+            Database.EnsureCreated();
             ApplicationDbInitializer.Initialize(this);
         }
 

@@ -5,11 +5,11 @@ namespace iShopMain.Models.Entity.UserInfo
     public class Role
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string NameRole { get; set; }
         public Role()
         {
-            Id = 0;
+            Id = Guid.NewGuid();
         }
     }
 }

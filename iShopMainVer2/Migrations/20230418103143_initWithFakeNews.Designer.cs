@@ -9,18 +9,18 @@ using iShopMain.Data;
 
 #nullable disable
 
-namespace iShopMain.Migrations
+namespace iShopMainVer2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230408163854_init")]
-    partial class init
+    [Migration("20230418103143_initWithFakeNews")]
+    partial class initWithFakeNews
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.4")
+                .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -56,8 +56,8 @@ namespace iShopMain.Migrations
                     b.Property<Guid>("InformationId")
                         .HasColumnType("uuid");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("integer");
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
@@ -100,11 +100,9 @@ namespace iShopMain.Migrations
 
             modelBuilder.Entity("iShopMain.Models.Entity.UserInfo.Role", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                        .HasColumnType("uuid");
 
                     b.Property<string>("NameRole")
                         .IsRequired()
