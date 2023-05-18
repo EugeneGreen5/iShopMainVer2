@@ -7,4 +7,5 @@ namespace iShopMainVer2.Models.Entity.Сharacteristic
         public string MaterialBody { get; set; }
 
     }
+
 }

@@ -5,7 +5,7 @@ namespace iShopMain.Services
 {
     public interface IService
     {
-        Task<UserRequestDto> InitializeAsync(IDto service);
-        Task<UserRequestDto> isAuthorizationAsync(IDto userDto);
+        Task<UserRequestDto> InitializeAsync(RegistrationUserDto userDto);
+        Task<UserRequestDto> isAuthorizationAsync(AuthorizationUserDto userDto);
     }
 }

@@ -5,7 +5,7 @@ namespace iShopMain.Models.Entity.UserInfo
     public class Account
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; init; }
         public string Login { get; set; }
         public string Password { get; set; }
 

@@ -1,20 +1,28 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace iShopMain.Models.Entity.UserInfo
+namespace iShopMain.Models.Entity.UserInfo;
+
+public class AppUser
 {
-    public class AppUser
-    {
-        [Key]
-        public Guid Id { get; set; }
-        public virtual Guid AccountId { get; set; }
-        public virtual Guid InformationId { get; set; }
-        public virtual Guid RoleId { get; set; }
+    [Key]
+    public Guid Id { get; set; }
+    public Guid AccountId { get; set; }
+    public Guid InformationId { get; set; }
+    public Guid RoleId { get; set; }
 
-        public AppUser()
-        {
-            Id = Guid.NewGuid();
-        }
+    public AppUser()
+    {
+        Id = Guid.NewGuid();
+    }
+
+    public AppUser(
+        Guid asccountId
+        , Guid informationId
+        , Guid roleId)
+    {
+        Id = Guid.NewGuid();
+        AccountId = asccountId;
+        InformationId = informationId;
+        RoleId = roleId;
     }
 }

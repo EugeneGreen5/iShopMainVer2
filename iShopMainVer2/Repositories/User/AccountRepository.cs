@@ -1,6 +1,7 @@
 ﻿using iShopMain.Data;
 using iShopMain.Models.Entity.UserInfo;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace iShopMain.Repositories.User
 {
@@ -47,6 +48,11 @@ namespace iShopMain.Repositories.User
         public void Dispose()
         {
 
+        }
+
+        public Task<bool> AnyAsync(Expression<Func<Account, bool>> expression, CancellationToken cancellationToken = default)
+        {
+            _context.Set<Account>().AnyAsync(expression, cancellationToken);
         }
     }
 }

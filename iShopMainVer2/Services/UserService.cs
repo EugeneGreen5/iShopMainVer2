@@ -6,95 +6,63 @@ using iShopMain.Repositories.User;
 using iShopMainVer2.Repositories.User;
 
 
-namespace iShopMain.Services
+namespace iShopMain.Services;
+
+public class UserService : IService
 {
-    public class UserService : IService
+    private readonly IRepository<AppUser> _dbUser;
+    private readonly IRepository<Account> _dbAccount;
+    private readonly IRepository<Information> _dbInformation;
+    private readonly IRoleRepository _dbRole;
+
+    public UserService(IRepository<AppUser> dbUser,
+        IRepository<Account> dbAccount,
+        IRepository<Information> dbInformation,
+        IRoleRepository dbRole)
     {
-        private readonly IRepository<AppUser> _dbUser;
-        private readonly IRepository<Account> _dbAccount;
-        private readonly IRepository<Information> _dbInformation;
-        private readonly IRoleRepository _dbRole;
+        _dbUser = dbUser;
+        _dbAccount = dbAccount;
+        _dbInformation = dbInformation;
+        _dbRole = dbRole;
+    }
 
-        public UserService(IRepository<AppUser> dbUser,
-            IRepository<Account> dbAccount,
-            IRepository<Information> dbInformation,
-            IRoleRepository dbRole)
+    public async Task<UserRequestDto> InitializeAsync(RegistrationUserDto newUserDto)
+    {
+        var isExists = await _dbAccount.AnyAsync(c=> c.Login.Equals(newUserDto.Email));
+        if(isExists)
         {
-            _dbUser = dbUser;
-            _dbAccount = dbAccount;
-            _dbInformation = dbInformation;
-            _dbRole = dbRole;
-        }
-
-        public async Task<UserRequestDto> InitializeAsync(IDto newUserDto)
-        {
-            var newUser = (RegistrationUserDto)newUserDto;
-            var accounts = await _dbAccount.GetListAsync();
-
-            foreach (var acc in accounts)
-            {
-                if (acc.Login.Equals(newUser.Email))
-                {
-                    return new UserRequestDto()
-                    {
-                        CodeRequest = 400,
-                        MessageRequest = "Пользователь с данным логином уже зарегистрирован."
-                    };
-
-                }
-            }
-
-            var user = new AppUser();
-
-            var account = new Account();
-            user.AccountId = account.Id;
-            account.Login = newUser.Email;
-            account.Password = GenerateSHA512.Create(newUser.Password);
-
-            var role = await _dbRole.GetRoleAsync("user");
-            user.RoleId = role.Id;
-
-            var information = new Information();
-            user.InformationId = information.Id;
-            information.Email = newUser.Email;
-            information.Name = newUser.Name;
-
-            await _dbUser.CreateAsync(user);
-            await _dbInformation.CreateAsync(information);
-            await _dbAccount.CreateAsync(account);
-
-
             return new UserRequestDto()
             {
-                CodeRequest = 200,
-                MessageRequest = $"{user.Id}"
+                CodeRequest = 400,
+                MessageRequest = "Пользователь с данным логином уже зарегистрирован."
             };
         }
 
-        public async Task<UserRequestDto> isAuthorizationAsync(IDto userDto)
+        var account = new Account() 
         {
-            var user = (AuthorizationUserDto)userDto;
-            var accounts = await _dbAccount.GetListAsync();
+            Login = newUserDto.Email,
+            Password = GenerateSHA512.Create(newUserDto.Password)
+        };
+        var role = await _dbRole.GetRoleAsync("user");
+        var information = newUserDto.GetInformationUser();
+        var user = new AppUser(account.Id, role.Id, information.Id);
 
-            foreach (var account in accounts)
-            {
-                if (account.Login.Equals(user.Login)) {
-                    if (account.Password.Equals(GenerateSHA512.Create(user.Password))){
-                        return new UserRequestDto()
-                        {
-                            CodeRequest = 200,
-                            MessageRequest = "Пользватель успешно авторизировался."
-                        };
-                    }
-                    return new UserRequestDto()
-                    {
-                        CodeRequest = 418,
-                        MessageRequest = "Введён неверный пароль."
-                    };
-                }
+        await _dbInformation.CreateAsync(information);
+        await _dbAccount.CreateAsync(account);
+        await _dbUser.CreateAsync(user);
 
-            }
+        return new UserRequestDto()
+        {
+            CodeRequest = 200,
+            MessageRequest = $"{user.Id}"
+        };
+    }
 
+    public async Task<UserRequestDto> isAuthorizationAsync(AuthorizationUserDto userDto)
+    {
+        var isExistsBy = await _dbAccount.AnyAsync(c => c.Login.Equals(userDto.Login));
+        if (!isExistsBy)
+        {
             return new UserRequestDto()
             {
                 CodeRequest = 419,
@@ -102,6 +70,24 @@ namespace iShopMain.Services
             };
         }
 
+        var passwordHash = GenerateSHA512.Create(userDto.Password);
+        var isExistsByLoginAndPassword = await _dbAccount.AnyAsync(c => c.Login.Equals(userDto.Login)
+                                                                        && c.Password.Equals(passwordHash));
+        if(isExistsByLoginAndPassword) 
+        {
+            return new UserRequestDto()
+            {
+                CodeRequest = 200,
+                MessageRequest = "Пользватель успешно авторизировался."
+            };
+        }
 
+        return new UserRequestDto()
+        {
+            CodeRequest = 418,
+            MessageRequest = "Введён неверный пароль."
+        };
     }
+
+
 }
