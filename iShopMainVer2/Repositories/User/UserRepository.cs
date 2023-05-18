@@ -18,7 +18,7 @@ namespace iShopMain.Repositories
         {
             try
             {
-                await _context.users.AddAsync(item);
+                await _context.Users.AddAsync(item);
             } catch (Exception ex)
             {
                 await Console.Out.WriteLineAsync(ex.Message);
@@ -43,7 +43,7 @@ namespace iShopMain.Repositories
 
         public async Task<List<AppUser>> GetListAsync()
         {
-            return await _context.users.ToListAsync();
+            return await _context.Users.ToListAsync();
 
         }
 

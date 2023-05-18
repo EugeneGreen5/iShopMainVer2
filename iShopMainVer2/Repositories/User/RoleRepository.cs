@@ -16,7 +16,7 @@ namespace iShopMainVer2.Repositories.User
         }
 
         public async Task<Role> GetRoleAsync(String name){
-            return await _context.roles.FirstOrDefaultAsync(x => x.NameRole == name);
+            return await _context.Roles.FirstOrDefaultAsync(x => x.NameRole == name);
         }
 
         public void Dispose()
@@ -26,7 +26,7 @@ namespace iShopMainVer2.Repositories.User
 
         public async Task<Role> Get(Guid id)
         {
-            return await _context.roles.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Roles.FirstOrDefaultAsync(x => x.Id == id);
         }
 
 

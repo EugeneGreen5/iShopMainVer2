@@ -24,7 +24,7 @@ namespace iShopMain.Data
                 new Role { NameRole = "user"},
                 new Role{ NameRole = "admin"}
             };
-            context.roles.AddRange(newRoles);
+            context.Roles.AddRange(newRoles);
             context.SaveChanges();
         }
 
@@ -35,7 +35,7 @@ namespace iShopMain.Data
                 new Account{Login = "alesha@mail.ru", Password = "123" },
                 new Account{Login = "petr@gmail.com", Password = "321" }
             };
-            context.accounts.AddRange(newAccounts);
+            context.Accounts.AddRange(newAccounts);
             context.SaveChanges();
         }
 
@@ -46,7 +46,7 @@ namespace iShopMain.Data
                 new Information { Email = "alesha@mail.ru", Name = "Алексей", Surname = "Иванов", Patronymic = "Васильевич", PhoneNumber = "+32112345698" },
                 new Information { Email = "petr@gmail.com", Name = "Petr", Surname = "Vasiliev", Patronymic = "Sergeevich", PhoneNumber = "+12345689093"}
             };
-            context.informations.AddRange(newInformations);
+            context.Informations.AddRange(newInformations);
             context.SaveChanges();
         }
 
@@ -54,11 +54,11 @@ namespace iShopMain.Data
         {
             var newUsers = new AppUser[]
             {
-                new AppUser{ AccountId = context.accounts.First().Id,InformationId = context.informations.First().Id, RoleId = context.roles.First().Id},
-                new AppUser{ AccountId = context.accounts.Skip(1).First().Id, InformationId = context.informations.Skip(1).First().Id, RoleId = context.roles.Skip(1).First().Id }
+                new AppUser{ AccountId = context.Accounts.First().Id,InformationId = context.Informations.First().Id, RoleId = context.Roles.First().Id},
+                new AppUser{ AccountId = context.Accounts.Skip(1).First().Id, InformationId = context.Informations.Skip(1).First().Id, RoleId = context.Roles.Skip(1).First().Id }
             };
 
-            context.users.AddRange(newUsers);
+            context.Users.AddRange(newUsers);
             context.SaveChanges();
         }
         #endregion

@@ -14,12 +14,12 @@ namespace iShopMain.Repositories.User
         }
         public async Task<Account> Get(Guid id)
         {
-            return await _context.accounts.FindAsync(id);
+            return await _context.Accounts.FindAsync(id);
         }
 
         public async Task CreateAsync(Account item)
         {
-            await _context.accounts.AddAsync(item);
+            await _context.Accounts.AddAsync(item);
             await SaveAsync();
         }
 
@@ -31,7 +31,7 @@ namespace iShopMain.Repositories.User
 
         public async Task<List<Account>> GetListAsync()
         {
-            return await _context.accounts.ToListAsync();
+            return await _context.Accounts.ToListAsync();
         }
 
         public async Task SaveAsync()

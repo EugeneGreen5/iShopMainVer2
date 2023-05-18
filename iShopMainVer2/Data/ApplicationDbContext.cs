@@ -1,5 +1,8 @@
 ﻿using iShopMain.Helpers;
 using iShopMain.Models.Entity.UserInfo;
+using iShopMainVer2.Models.Entity.Characteristics;
+using iShopMainVer2.Models.Entity.Сharacteristic;
+using iShopMainVer2.Models.Entity.СharacteristicInformation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -7,10 +10,17 @@ namespace iShopMain.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<AppUser> users { get; set; }
-        public DbSet<Account> accounts { get; set; }
-        public DbSet<Information> informations { get; set; }
-        public DbSet<Role> roles { get; set; }
+        public DbSet<AppUser> Users { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Information> Informations { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Camera> Cameras { get; set; }
+        public DbSet<Characteristics> Сharacteristics { get; set; } 
+        public DbSet<GeneralCharacteristics> GeneralCharacteristics { get; set; }
+        public DbSet<Materials> Materials { get; set; }
+        public DbSet<MemoryAndProcessor> MemoryAndProcessors { get; set; }
+        public DbSet<Power> Powers { get; set; }
+        public DbSet<Screen> Screens { get; set; }
         public ApplicationDbContext(DbContextOptions options) 
             : base(options)
         { 

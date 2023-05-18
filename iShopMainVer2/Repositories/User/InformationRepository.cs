@@ -14,7 +14,7 @@ namespace iShopMain.Repositories.User
         }
         public async Task CreateAsync(Information item)
         {
-            await _context.informations.AddAsync(item);
+            await _context.Informations.AddAsync(item);
             await SaveAsync();
         }
 
@@ -35,7 +35,7 @@ namespace iShopMain.Repositories.User
 
         public async Task<List<Information>> GetListAsync()
         {
-            return await _context.informations.ToListAsync();
+            return await _context.Informations.ToListAsync();
         }
 
         public async Task SaveAsync()
