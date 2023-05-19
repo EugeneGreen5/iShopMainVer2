@@ -1,17 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using iShopMainVer2.Models.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace iShopMain.Models.Entity.UserInfo
 {
-    public class Account
+    public class Account : BaseEntity
     {
-        [Key]
-        public Guid Id { get; init; }
         public string Login { get; set; }
         public string Password { get; set; }
-
-        public Account()
-        {
-            Id = Guid.NewGuid();
-        }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace iShopMainVer2.Models.Entity.Сharacteristic
 {
-    public class GeneralCharacteristics : CharacteristicsAbstract
+    public class GeneralCharacteristics : BaseEntity
     {
         public string Country { get; set; }
         public int ProductServiceLife { get; set; }

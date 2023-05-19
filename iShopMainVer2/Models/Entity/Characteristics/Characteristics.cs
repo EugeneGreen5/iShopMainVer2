@@ -2,7 +2,7 @@
 
 namespace iShopMainVer2.Models.Entity.СharacteristicInformation
 {
-    public class Characteristics : CharacteristicsAbstract
+    public class Characteristics : BaseEntity
     {
         public virtual Guid GeneralCharacteristicsId { get; set; }
         public virtual Guid MaterialId { get; set; }

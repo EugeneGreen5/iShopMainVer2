@@ -1,6 +1,6 @@
 ﻿namespace iShopMainVer2.Models.Entity.Characteristics
 {
-    public class Screen : CharacteristicsAbstract
+    public class Screen : BaseEntity
     {
         public int DiagonalScreen { get; set; }
         public string TypeScreen { get; set; }

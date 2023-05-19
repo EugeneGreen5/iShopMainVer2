@@ -2,7 +2,7 @@
 
 namespace iShopMainVer2.Models.Entity.Сharacteristic
 {
-    public class Materials : CharacteristicsAbstract
+    public class Materials : BaseEntity
     {
         public string MaterialBody { get; set; }
 

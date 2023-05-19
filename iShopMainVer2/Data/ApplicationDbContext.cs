@@ -21,13 +21,13 @@ namespace iShopMain.Data
         public DbSet<MemoryAndProcessor> MemoryAndProcessors { get; set; }
         public DbSet<Power> Powers { get; set; }
         public DbSet<Screen> Screens { get; set; }
-        public ApplicationDbContext(DbContextOptions options) 
+        public ApplicationDbContext(DbContextOptions options, ModelBuilder modelBuilder) 
             : base(options)
-        { 
-
-            Database.EnsureCreated();
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+            //Database.EnsureCreated();
         }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             #region add fake data
