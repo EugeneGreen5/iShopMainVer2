@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace iShopMain.Repositories.User
 {
-    public class AccountRepository : IRepository<Account>
+    public class AccountRepository : IRepository<AccountEntity>
     {
         private readonly ApplicationDbContext _context;
 
@@ -13,12 +13,12 @@ namespace iShopMain.Repositories.User
         {
             _context = context;
         }
-        public async Task<Account> Get(Guid id)
+        public async Task<AccountEntity> Get(Guid id)
         {
             return await _context.Accounts.FindAsync(id);
         }
 
-        public async Task CreateAsync(Account item)
+        public async Task CreateAsync(AccountEntity item)
         {
             await _context.Accounts.AddAsync(item);
             await SaveAsync();
@@ -30,7 +30,7 @@ namespace iShopMain.Repositories.User
         }
 
 
-        public async Task<List<Account>> GetListAsync()
+        public async Task<List<AccountEntity>> GetListAsync()
         {
             return await _context.Accounts.ToListAsync();
         }
@@ -40,7 +40,7 @@ namespace iShopMain.Repositories.User
             await _context.SaveChangesAsync();
         }
 
-        public void Update(Account item)
+        public void Update(AccountEntity item)
         {
             throw new NotImplementedException();
         }
@@ -50,9 +50,9 @@ namespace iShopMain.Repositories.User
 
         }
 
-        public Task<bool> AnyAsync(Expression<Func<Account, bool>> expression, CancellationToken cancellationToken = default)
+        public Task<bool> AnyAsync(Expression<Func<AccountEntity, bool>> expression, CancellationToken cancellationToken = default)
         {
-            _context.Set<Account>().AnyAsync(expression, cancellationToken);
+            _context.Set<AccountEntity>().AnyAsync(expression, cancellationToken);
         }
     }
 }

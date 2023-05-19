@@ -1,18 +1,18 @@
 ﻿using iShopMainVer2.Models.Entity;
-using iShopMainVer2.Models.Entity.Order;
-using iShopMainVer2.Models.Entity.Product;
+using iShopMainVer2.Models.Entity.OrderEntity;
+using iShopMainVer2.Models.Entity.Products;
 
 namespace iShopMain.Models.Entity.UserInfo;
 
-public class AppUser : BaseEntity
+public class UserEntity : BaseEntity
 {
     public Guid AccountId { get; set; }
     public Guid InformationId { get; set; }
     public string Role { get; init; }
-    public virtual ICollection<Order> OrderList { get; set; } = new List<Order>();
-    public virtual ICollection<SelectedProduct> SelectedProducts { get; set; } = new List<SelectedProduct>();
+    public virtual ICollection<OrderEntity> OrderList { get; set; } = new List<OrderEntity>();
+    public virtual ICollection<SelectedProductEntity> SelectedProducts { get; set; } = new List<SelectedProductEntity>();
 
-    public AppUser(
+    public UserEntity(
         Guid accountId
         , Guid informationId
         )

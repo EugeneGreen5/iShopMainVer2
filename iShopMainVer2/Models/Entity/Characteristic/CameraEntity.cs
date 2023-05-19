@@ -1,6 +1,6 @@
-﻿namespace iShopMainVer2.Models.Entity.Characteristics
+﻿namespace iShopMainVer2.Models.Entity.Characteristic
 {
-    public class Camera : BaseEntity
+    public class CameraEntity : BaseEntity
     {
         public string MainCamera { get; set; }
         public string UltraWideAngleCamera { get; set; }

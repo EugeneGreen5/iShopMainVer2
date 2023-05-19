@@ -1,6 +1,6 @@
 ﻿namespace iShopMainVer2.Models.Entity.Order;
 
-public class Address : BaseEntity
+public class AddressEntity : BaseEntity
 {
     public int Index { get; set; }
     public string Region { get; set; }

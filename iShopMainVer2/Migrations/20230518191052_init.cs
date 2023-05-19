@@ -61,7 +61,7 @@ namespace iShopMainVer2.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "GeneralCharacteristics",
+                name: "GeneralCharacteristicsEntity",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -95,7 +95,7 @@ namespace iShopMainVer2.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Materials",
+                name: "MaterialsEntity",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -228,13 +228,13 @@ namespace iShopMainVer2.Migrations
                 name: "Cameras");
 
             migrationBuilder.DropTable(
-                name: "GeneralCharacteristics");
+                name: "GeneralCharacteristicsEntity");
 
             migrationBuilder.DropTable(
                 name: "Informations");
 
             migrationBuilder.DropTable(
-                name: "Materials");
+                name: "MaterialsEntity");
 
             migrationBuilder.DropTable(
                 name: "MemoryAndProcessors");

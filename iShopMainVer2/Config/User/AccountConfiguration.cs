@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace iShopMainVer2.Config.User;
 
-public class AccountConfiguration : BaseEntityConfiguration<Account>
+public class AccountConfiguration : BaseEntityConfiguration<AccountEntity>
 {
-    public override void ConfigEntity(EntityTypeBuilder<Account> builder)
+    public override void ConfigEntity(EntityTypeBuilder<AccountEntity> builder)
     {
-        builder.
+        throw new NotImplementedException();
     }
 }

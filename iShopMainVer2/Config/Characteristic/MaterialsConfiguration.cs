@@ -1,5 +1,12 @@
-﻿namespace iShopMainVer2.Config.Characteristic;
+﻿using iShopMainVer2.Models.Entity.Сharacteristic;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class MaterialsConfiguration
+namespace iShopMainVer2.Config.Characteristic;
+
+public class MaterialsConfiguration : BaseEntityConfiguration<MaterialsEntity>
 {
+    public override void ConfigEntity(EntityTypeBuilder<MaterialsEntity> builder)
+    {
+        throw new NotImplementedException();
+    }
 }

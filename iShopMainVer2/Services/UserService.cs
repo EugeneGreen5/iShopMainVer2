@@ -10,14 +10,14 @@ namespace iShopMain.Services;
 
 public class UserService : IService
 {
-    private readonly IRepository<AppUser> _dbUser;
-    private readonly IRepository<Account> _dbAccount;
-    private readonly IRepository<Information> _dbInformation;
+    private readonly IRepository<UserEntity> _dbUser;
+    private readonly IRepository<AccountEntity> _dbAccount;
+    private readonly IRepository<InformationEntity> _dbInformation;
     private readonly IRoleRepository _dbRole;
 
-    public UserService(IRepository<AppUser> dbUser,
-        IRepository<Account> dbAccount,
-        IRepository<Information> dbInformation,
+    public UserService(IRepository<UserEntity> dbUser,
+        IRepository<AccountEntity> dbAccount,
+        IRepository<InformationEntity> dbInformation,
         IRoleRepository dbRole)
     {
         _dbUser = dbUser;
@@ -38,14 +38,14 @@ public class UserService : IService
             };
         }
 
-        var account = new Account() 
+        var account = new AccountEntity() 
         {
             Login = newUserDto.Email,
             Password = GenerateSHA512.Create(newUserDto.Password)
         };
         var role = await _dbRole.GetRoleAsync("user");
         var information = newUserDto.GetInformationUser();
-        var user = new AppUser(account.Id, role.Id, information.Id);
+        var user = new UserEntity(account.Id, information.Id);
 
         await _dbInformation.CreateAsync(information);
         await _dbAccount.CreateAsync(account);

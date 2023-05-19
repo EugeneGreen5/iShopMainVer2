@@ -1,6 +1,6 @@
-﻿namespace iShopMainVer2.Models.Entity.Characteristics
+﻿namespace iShopMainVer2.Models.Entity.Characteristic
 {
-    public class Power : BaseEntity
+    public class PowerEntity : BaseEntity
     {
         public string TypeOfChargingConnector { get; set; }
         public bool IsWirelessCharging { get; set; }

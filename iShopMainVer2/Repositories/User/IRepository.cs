@@ -13,5 +13,5 @@ public interface IRepository<T> : IDisposable
     void Update(T item);
     Task SaveAsync();
 
-    Task<bool> AnyAsync(Expression<Func<Account, bool>> expression, CancellationToken cancellationToken = default);
+    Task<bool> AnyAsync(Expression<Func<AccountEntity, bool>> expression, CancellationToken cancellationToken = default);
 }

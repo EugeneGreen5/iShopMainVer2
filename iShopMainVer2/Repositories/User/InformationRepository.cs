@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace iShopMain.Repositories.User
 {
-    public class InformationRepository : IRepository<Information>
+    public class InformationRepository : IRepository<InformationEntity>
     {
         private readonly ApplicationDbContext _context;
 
@@ -12,7 +12,7 @@ namespace iShopMain.Repositories.User
         {
             _context = context;
         }
-        public async Task CreateAsync(Information item)
+        public async Task CreateAsync(InformationEntity item)
         {
             await _context.Informations.AddAsync(item);
             await SaveAsync();
@@ -28,12 +28,12 @@ namespace iShopMain.Repositories.User
         
         }
 
-        public Task<Information> Get(Guid id)
+        public Task<InformationEntity> Get(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<List<Information>> GetListAsync()
+        public async Task<List<InformationEntity>> GetListAsync()
         {
             return await _context.Informations.ToListAsync();
         }
@@ -43,7 +43,7 @@ namespace iShopMain.Repositories.User
             await _context.SaveChangesAsync();
         }
 
-        public void Update(Information item)
+        public void Update(InformationEntity item)
         {
             throw new NotImplementedException();
         }

@@ -1,9 +1,8 @@
 ﻿using iShopMainVer2.Models.Entity;
-using System.ComponentModel.DataAnnotations;
 
 namespace iShopMain.Models.Entity.UserInfo
 {
-    public class Information : BaseEntity
+    public class InformationEntity : BaseEntity
     {
         public string Surname { get; set; } = string.Empty;
         public string Name { get; set; }

@@ -1,5 +1,12 @@
-﻿namespace iShopMainVer2.Config.Characteristic;
+﻿using iShopMainVer2.Models.Entity.Characteristic;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class PowerConfiguration
+namespace iShopMainVer2.Config.Characteristic;
+
+public class PowerConfiguration : BaseEntityConfiguration<PowerEntity>
 {
+    public override void ConfigEntity(EntityTypeBuilder<PowerEntity> builder)
+    {
+        throw new NotImplementedException();
+    }
 }

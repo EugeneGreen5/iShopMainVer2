@@ -1,8 +1,6 @@
-﻿using iShopMainVer2.Models.Entity.Characteristics;
-
-namespace iShopMainVer2.Models.Entity.Сharacteristic
+﻿namespace iShopMainVer2.Models.Entity.Characteristic
 {
-    public class GeneralCharacteristics : BaseEntity
+    public class GeneralCharacteristicEntity : BaseEntity
     {
         public string Country { get; set; }
         public int ProductServiceLife { get; set; }

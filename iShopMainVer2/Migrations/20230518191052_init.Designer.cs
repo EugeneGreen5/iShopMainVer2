@@ -25,7 +25,7 @@ namespace iShopMainVer2.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("iShopMain.Models.Entity.UserInfo.Account", b =>
+            modelBuilder.Entity("iShopMain.Models.Entity.UserInfo.AccountEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -58,7 +58,7 @@ namespace iShopMainVer2.Migrations
                         });
                 });
 
-            modelBuilder.Entity("iShopMain.Models.Entity.UserInfo.AppUser", b =>
+            modelBuilder.Entity("iShopMain.Models.Entity.UserInfo.UserEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -94,7 +94,7 @@ namespace iShopMainVer2.Migrations
                         });
                 });
 
-            modelBuilder.Entity("iShopMain.Models.Entity.UserInfo.Information", b =>
+            modelBuilder.Entity("iShopMain.Models.Entity.UserInfo.InformationEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -177,7 +177,7 @@ namespace iShopMainVer2.Migrations
                         });
                 });
 
-            modelBuilder.Entity("iShopMainVer2.Models.Entity.Characteristics.Camera", b =>
+            modelBuilder.Entity("iShopMainVer2.Models.Entity.CharacteristicEntity.CameraEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -212,7 +212,7 @@ namespace iShopMainVer2.Migrations
                     b.ToTable("Cameras");
                 });
 
-            modelBuilder.Entity("iShopMainVer2.Models.Entity.Characteristics.Power", b =>
+            modelBuilder.Entity("iShopMainVer2.Models.Entity.CharacteristicEntity.PowerEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -244,7 +244,7 @@ namespace iShopMainVer2.Migrations
                     b.ToTable("Powers");
                 });
 
-            modelBuilder.Entity("iShopMainVer2.Models.Entity.Characteristics.Screen", b =>
+            modelBuilder.Entity("iShopMainVer2.Models.Entity.CharacteristicEntity.ScreenEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -272,7 +272,7 @@ namespace iShopMainVer2.Migrations
                     b.ToTable("Screens");
                 });
 
-            modelBuilder.Entity("iShopMainVer2.Models.Entity.Сharacteristic.GeneralCharacteristics", b =>
+            modelBuilder.Entity("iShopMainVer2.Models.Entity.Сharacteristic.GeneralCharacteristicsEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -302,10 +302,10 @@ namespace iShopMainVer2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("GeneralCharacteristics");
+                    b.ToTable("GeneralCharacteristicsEntity");
                 });
 
-            modelBuilder.Entity("iShopMainVer2.Models.Entity.Сharacteristic.Materials", b =>
+            modelBuilder.Entity("iShopMainVer2.Models.Entity.Сharacteristic.MaterialsEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -317,10 +317,10 @@ namespace iShopMainVer2.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Materials");
+                    b.ToTable("MaterialsEntity");
                 });
 
-            modelBuilder.Entity("iShopMainVer2.Models.Entity.Сharacteristic.MemoryAndProcessor", b =>
+            modelBuilder.Entity("iShopMainVer2.Models.Entity.Сharacteristic.MemoryAndProcessorEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -338,7 +338,7 @@ namespace iShopMainVer2.Migrations
                     b.ToTable("MemoryAndProcessors");
                 });
 
-            modelBuilder.Entity("iShopMainVer2.Models.Entity.СharacteristicInformation.Characteristics", b =>
+            modelBuilder.Entity("iShopMainVer2.Models.Entity.СharacteristicInformation.CharacteristicEntity", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()

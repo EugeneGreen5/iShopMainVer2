@@ -21,9 +21,9 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<ApplicationDbContext>();
 
 
-builder.Services.AddScoped<IRepository<AppUser>, UserRepository>();
-builder.Services.AddScoped<IRepository<Account>, AccountRepository>();
-builder.Services.AddScoped<IRepository<Information>, InformationRepository>();
+builder.Services.AddScoped<IRepository<UserEntity>, UserRepository>();
+builder.Services.AddScoped<IRepository<AccountEntity>, AccountRepository>();
+builder.Services.AddScoped<IRepository<InformationEntity>, InformationRepository>();
 builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IService, UserService>();
 

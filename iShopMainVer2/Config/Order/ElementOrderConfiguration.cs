@@ -1,5 +1,12 @@
-﻿namespace iShopMainVer2.Config.Order;
+﻿using iShopMainVer2.Models.Entity.Order;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class ElementOrderConfiguration
+namespace iShopMainVer2.Config.Order;
+
+public class ElementOrderConfiguration : BaseEntityConfiguration<ElementOrderEntity>
 {
+    public override void ConfigEntity(EntityTypeBuilder<ElementOrderEntity> builder)
+    {
+        throw new NotImplementedException();
+    }
 }

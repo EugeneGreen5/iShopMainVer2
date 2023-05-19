@@ -30,10 +30,10 @@ namespace iShopMain.Data
 
         private static void AddModelAccount(ApplicationDbContext context)
         {
-            var newAccounts = new Account[]
+            var newAccounts = new AccountEntity[]
             {
-                new Account{Login = "alesha@mail.ru", Password = "123" },
-                new Account{Login = "petr@gmail.com", Password = "321" }
+                new AccountEntity{Login = "alesha@mail.ru", Password = "123" },
+                new AccountEntity{Login = "petr@gmail.com", Password = "321" }
             };
             context.Accounts.AddRange(newAccounts);
             context.SaveChanges();
@@ -41,10 +41,10 @@ namespace iShopMain.Data
 
         private static void AddModelInformation(ApplicationDbContext context)
         {
-            var newInformations = new Information[]
+            var newInformations = new InformationEntity[]
             {
-                new Information { Email = "alesha@mail.ru", Name = "Алексей", Surname = "Иванов", Patronymic = "Васильевич", PhoneNumber = "+32112345698" },
-                new Information { Email = "petr@gmail.com", Name = "Petr", Surname = "Vasiliev", Patronymic = "Sergeevich", PhoneNumber = "+12345689093"}
+                new InformationEntity { Email = "alesha@mail.ru", Name = "Алексей", Surname = "Иванов", Patronymic = "Васильевич", PhoneNumber = "+32112345698" },
+                new InformationEntity { Email = "petr@gmail.com", Name = "Petr", Surname = "Vasiliev", Patronymic = "Sergeevich", PhoneNumber = "+12345689093"}
             };
             context.Informations.AddRange(newInformations);
             context.SaveChanges();

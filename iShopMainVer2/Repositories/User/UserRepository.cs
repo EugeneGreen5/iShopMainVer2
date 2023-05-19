@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace iShopMain.Repositories
 {
-    public class UserRepository : IRepository<AppUser>
+    public class UserRepository : IRepository<UserEntity>
     {
         private readonly ApplicationDbContext _context;
 
@@ -14,7 +14,7 @@ namespace iShopMain.Repositories
             _context = applicationDbContext;
         }
 
-        public async Task CreateAsync(AppUser item)
+        public async Task CreateAsync(UserEntity item)
         {
             try
             {
@@ -36,12 +36,12 @@ namespace iShopMain.Repositories
 
         }
 
-        public Task<AppUser> Get(Guid id)
+        public Task<UserEntity> Get(Guid id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<List<AppUser>> GetListAsync()
+        public async Task<List<UserEntity>> GetListAsync()
         {
             return await _context.Users.ToListAsync();
 
@@ -52,7 +52,7 @@ namespace iShopMain.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public void Update(AppUser item)
+        public void Update(UserEntity item)
         {
             throw new NotImplementedException();
         }
