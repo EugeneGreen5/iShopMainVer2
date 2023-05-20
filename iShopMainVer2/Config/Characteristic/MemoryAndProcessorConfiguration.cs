@@ -1,4 +1,5 @@
-﻿using iShopMainVer2.Models.Entity.Сharacteristic;
+﻿using iShopMainVer2.Models.Entity.Characteristic;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace iShopMainVer2.Config.Characteristic;
@@ -7,6 +8,6 @@ public class MemoryAndProcessorConfiguration : BaseEntityConfiguration<MemoryAnd
 {
     public override void ConfigEntity(EntityTypeBuilder<MemoryAndProcessorEntity> builder)
     {
-        throw new NotImplementedException();
+        builder.ToTable("memory_and_processor");
     }
 }

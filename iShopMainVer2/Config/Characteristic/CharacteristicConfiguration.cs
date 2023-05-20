@@ -1,4 +1,5 @@
 ﻿using iShopMainVer2.Models.Entity.Characteristic;
+using Microsoft.EntityFrameworkCore;
 
 namespace iShopMainVer2.Config.Characteristic;
 
@@ -6,6 +7,6 @@ public class CharacteristicConfiguration : BaseEntityConfiguration<Characteristi
 {
     public override void ConfigEntity(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<CharacteristicEntity> builder)
     {
-        throw new NotImplementedException();
+        builder.ToTable("characteristic");
     }
 }

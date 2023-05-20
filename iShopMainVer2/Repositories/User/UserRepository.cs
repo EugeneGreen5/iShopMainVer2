@@ -2,6 +2,7 @@
 using iShopMain.Models.Entity.UserInfo;
 using iShopMain.Repositories.User;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace iShopMain.Repositories
 {
@@ -12,6 +13,11 @@ namespace iShopMain.Repositories
         public UserRepository(ApplicationDbContext applicationDbContext)
         {
             _context = applicationDbContext;
+        }
+
+        public Task<bool> AnyAsync(Expression<Func<AccountEntity, bool>> expression, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task CreateAsync(UserEntity item)

@@ -52,7 +52,8 @@ namespace iShopMain.Repositories.User
 
         public Task<bool> AnyAsync(Expression<Func<AccountEntity, bool>> expression, CancellationToken cancellationToken = default)
         {
-            _context.Set<AccountEntity>().AnyAsync(expression, cancellationToken);
+            throw new NotImplementedException();
+            //_context.Set<AccountEntity>().AnyAsync(expression, cancellationToken);
         }
     }
 }

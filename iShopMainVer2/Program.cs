@@ -3,7 +3,6 @@ using iShopMain.Models.Entity.UserInfo;
 using iShopMain.Repositories;
 using iShopMain.Repositories.User;      
 using iShopMain.Services;
-using iShopMainVer2.Repositories.User;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
  
@@ -19,12 +18,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter(); // фиксирует исключе
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<ApplicationDbContext>();
-
-
+builder.Services.AddScoped<ModelBuilder>();
 builder.Services.AddScoped<IRepository<UserEntity>, UserRepository>();
 builder.Services.AddScoped<IRepository<AccountEntity>, AccountRepository>();
 builder.Services.AddScoped<IRepository<InformationEntity>, InformationRepository>();
-builder.Services.AddScoped<IRoleRepository, RoleRepository>();
 builder.Services.AddScoped<IService, UserService>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

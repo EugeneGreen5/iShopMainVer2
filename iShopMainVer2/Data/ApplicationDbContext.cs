@@ -1,12 +1,8 @@
 ﻿using iShopMain.Helpers;
 using iShopMain.Models.Entity.UserInfo;
-using iShopMainVer2.Models.Entity;
-using iShopMainVer2.Models.Entity.CharacteristicEntity;
-using iShopMainVer2.Models.Entity.Сharacteristic;
-using iShopMainVer2.Models.Entity.СharacteristicInformation;
+using iShopMainVer2.Models.Entity.Characteristic;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using System.Reflection.PortableExecutable;
+using System.Reflection;
 
 namespace iShopMain.Data
 {
@@ -25,17 +21,16 @@ namespace iShopMain.Data
         public ApplicationDbContext(DbContextOptions options, ModelBuilder modelBuilder) 
             : base(options)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
-            //Database.EnsureCreated();
+            Database.EnsureCreated();
+
         }
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+
+
             #region add fake data
-            var role1 = new Role { NameRole = "user" };
-            var role2 = new Role { NameRole = "admin" };
-            modelBuilder.Entity<Role>().HasData(role1, role2);
-     
             var account1 = new AccountEntity { Login = "alesha@mail.ru", Password = GenerateSHA512.Create("123") };
             var account2 = new AccountEntity { Login = "petr@gmail.com", Password = GenerateSHA512.Create("321") };
             modelBuilder.Entity<AccountEntity>().HasData(account1, account2);
@@ -44,11 +39,10 @@ namespace iShopMain.Data
             var information2 = new InformationEntity { Email = "petr@gmail.com", Name = "Petr", Surname = "Vasiliev", Patronymic = "Sergeevich", PhoneNumber = "+12345689093" };
             modelBuilder.Entity<InformationEntity>().HasData(information1, information2);
 
-            var user1 = new UserEntity { AccountId = account1.Id, InformationId = information1.Id, RoleId = role1.Id };
-            var user2 = new UserEntity { AccountId = account2.Id, InformationId = information2.Id, RoleId = role2.Id };
+            var user1 = new UserEntity ( account1.Id, information1.Id, "user" );
+            var user2 = new UserEntity ( account2.Id, information2.Id, "admin");
 
             modelBuilder.Entity<UserEntity>().HasData(user1, user2);
-
             #endregion
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace iShopMainVer2.Models.Entity.Сharacteristic
+﻿namespace iShopMainVer2.Models.Entity.Characteristic
 {
     public class MaterialsEntity : BaseEntity
     {

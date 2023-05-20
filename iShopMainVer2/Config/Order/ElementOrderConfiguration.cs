@@ -1,4 +1,5 @@
 ﻿using iShopMainVer2.Models.Entity.Order;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace iShopMainVer2.Config.Order;
@@ -7,6 +8,8 @@ public class ElementOrderConfiguration : BaseEntityConfiguration<ElementOrderEnt
 {
     public override void ConfigEntity(EntityTypeBuilder<ElementOrderEntity> builder)
     {
-        throw new NotImplementedException();
+        builder.ToTable("element_order");
+
+        builder.HasKey(x => new { x.ProductID, x.OrderId });
     }
 }

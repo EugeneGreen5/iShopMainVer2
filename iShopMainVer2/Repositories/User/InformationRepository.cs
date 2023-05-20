@@ -1,6 +1,7 @@
 ﻿using iShopMain.Data;
 using iShopMain.Models.Entity.UserInfo;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace iShopMain.Repositories.User
 {
@@ -12,6 +13,12 @@ namespace iShopMain.Repositories.User
         {
             _context = context;
         }
+
+        public Task<bool> AnyAsync(Expression<Func<AccountEntity, bool>> expression, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task CreateAsync(InformationEntity item)
         {
             await _context.Informations.AddAsync(item);

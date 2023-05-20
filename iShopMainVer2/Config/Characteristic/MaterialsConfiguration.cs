@@ -1,4 +1,5 @@
-﻿using iShopMainVer2.Models.Entity.Сharacteristic;
+﻿using iShopMainVer2.Models.Entity.Characteristic;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace iShopMainVer2.Config.Characteristic;
@@ -7,6 +8,6 @@ public class MaterialsConfiguration : BaseEntityConfiguration<MaterialsEntity>
 {
     public override void ConfigEntity(EntityTypeBuilder<MaterialsEntity> builder)
     {
-        throw new NotImplementedException();
+        builder.ToTable("materials");
     }
 }
