@@ -39,6 +39,20 @@ namespace iShopMainVer2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("account", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("5afe3981-5971-4c0e-817c-94350534b6ff"),
+                            Login = "alesha@mail.ru",
+                            Password = "3C9909AFEC25354D551DAE21590BB26E38D53F2173B8D3DC3EEE4C047E7AB1C1EB8B85103E3BE7BA613B31BB5C9C36214DC9F14A42FD7A2FDB84856BCA5C44C2"
+                        },
+                        new
+                        {
+                            Id = new Guid("ad8b5f49-09b0-43b7-96d9-0287e1ed00de"),
+                            Login = "petr@gmail.com",
+                            Password = "3043AA4A83B0934982956A90828140CB834869135B5F294938865DE12E036DE440A330E1E8529BEC15DDD59F18D1161A97BFEC110D2622680F2C714A737D7061"
+                        });
                 });
 
             modelBuilder.Entity("iShopMain.Models.Entity.UserInfo.InformationEntity", b =>
@@ -73,6 +87,28 @@ namespace iShopMainVer2.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("information", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("18b92259-a31d-484e-836a-3bf91b6c1e26"),
+                            DateOfRegistration = new DateOnly(2023, 5, 20),
+                            Email = "alesha@mail.ru",
+                            Name = "Алексей",
+                            Patronymic = "Васильевич",
+                            PhoneNumber = "+32112345698",
+                            Surname = "Иванов"
+                        },
+                        new
+                        {
+                            Id = new Guid("59204603-a957-4481-a1b0-f7a0613c647c"),
+                            DateOfRegistration = new DateOnly(2023, 5, 20),
+                            Email = "petr@gmail.com",
+                            Name = "Petr",
+                            Patronymic = "Sergeevich",
+                            PhoneNumber = "+12345689093",
+                            Surname = "Vasiliev"
+                        });
                 });
 
             modelBuilder.Entity("iShopMain.Models.Entity.UserInfo.UserEntity", b =>
@@ -93,7 +129,27 @@ namespace iShopMainVer2.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AccountId");
+
+                    b.HasIndex("InformationId");
+
                     b.ToTable("user", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("2d36ba0c-b580-4843-8440-e553f2939449"),
+                            AccountId = new Guid("5afe3981-5971-4c0e-817c-94350534b6ff"),
+                            InformationId = new Guid("18b92259-a31d-484e-836a-3bf91b6c1e26"),
+                            Role = "user"
+                        },
+                        new
+                        {
+                            Id = new Guid("aae3e209-cba1-4d1a-982f-13a035f2eff1"),
+                            AccountId = new Guid("ad8b5f49-09b0-43b7-96d9-0287e1ed00de"),
+                            InformationId = new Guid("59204603-a957-4481-a1b0-f7a0613c647c"),
+                            Role = "admin"
+                        });
                 });
 
             modelBuilder.Entity("iShopMainVer2.Models.Entity.Characteristic.CameraEntity", b =>
@@ -137,7 +193,13 @@ namespace iShopMainVer2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<Guid>("CameraEntityId")
+                        .HasColumnType("uuid");
+
                     b.Property<Guid>("CameraId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("GeneralCharacteristicEntityId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("GeneralCharacteristicsId")
@@ -146,16 +208,40 @@ namespace iShopMainVer2.Migrations
                     b.Property<Guid>("MaterialId")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid>("MaterialsEntityId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("MemoryAndProcessorEntityId")
+                        .HasColumnType("uuid");
+
                     b.Property<Guid>("MemoryAndProcessorId")
                         .HasColumnType("uuid");
 
+                    b.Property<Guid>("PowerEntityId")
+                        .HasColumnType("uuid");
+
                     b.Property<Guid>("PowerId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ScreenEntityId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("ScreenId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CameraEntityId");
+
+                    b.HasIndex("GeneralCharacteristicEntityId");
+
+                    b.HasIndex("MaterialsEntityId");
+
+                    b.HasIndex("MemoryAndProcessorEntityId");
+
+                    b.HasIndex("PowerEntityId");
+
+                    b.HasIndex("ScreenEntityId");
 
                     b.ToTable("characteristic", (string)null);
                 });
@@ -329,7 +415,7 @@ namespace iShopMainVer2.Migrations
 
             modelBuilder.Entity("iShopMainVer2.Models.Entity.Order.ElementOrderEntity", b =>
                 {
-                    b.Property<Guid>("ProductID")
+                    b.Property<Guid>("ProductId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("OrderId")
@@ -342,17 +428,9 @@ namespace iShopMainVer2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("OrderEntityId")
-                        .HasColumnType("uuid");
+                    b.HasKey("ProductId", "OrderId");
 
-                    b.Property<Guid?>("ProductEntityId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("ProductID", "OrderId");
-
-                    b.HasIndex("OrderEntityId");
-
-                    b.HasIndex("ProductEntityId");
+                    b.HasIndex("OrderId");
 
                     b.ToTable("element_order", (string)null);
                 });
@@ -372,15 +450,12 @@ namespace iShopMainVer2.Migrations
                     b.Property<double>("OrderAmount")
                         .HasColumnType("double precision");
 
-                    b.Property<Guid?>("UserEntityId")
-                        .HasColumnType("uuid");
-
                     b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserEntityId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("order", (string)null);
                 });
@@ -421,6 +496,10 @@ namespace iShopMainVer2.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CharacteristicId");
+
+                    b.HasIndex("OverviewId");
+
                     b.ToTable("product", (string)null);
                 });
 
@@ -436,48 +515,159 @@ namespace iShopMainVer2.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("ProductEntityId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid?>("UserEntityId")
-                        .HasColumnType("uuid");
-
                     b.HasKey("ProductId", "UserId");
 
-                    b.HasIndex("ProductEntityId");
-
-                    b.HasIndex("UserEntityId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("selected_product", (string)null);
                 });
 
-            modelBuilder.Entity("iShopMainVer2.Models.Entity.Order.ElementOrderEntity", b =>
+            modelBuilder.Entity("iShopMain.Models.Entity.UserInfo.UserEntity", b =>
+                {
+                    b.HasOne("iShopMain.Models.Entity.UserInfo.AccountEntity", "Account")
+                        .WithMany()
+                        .HasForeignKey("AccountId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("iShopMain.Models.Entity.UserInfo.InformationEntity", "Information")
+                        .WithMany()
+                        .HasForeignKey("InformationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Account");
+
+                    b.Navigation("Information");
+                });
+
+            modelBuilder.Entity("iShopMainVer2.Models.Entity.Characteristic.CharacteristicEntity", b =>
+                {
+                    b.HasOne("iShopMainVer2.Models.Entity.Characteristic.CameraEntity", "CameraEntity")
+                        .WithMany()
+                        .HasForeignKey("CameraEntityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("iShopMainVer2.Models.Entity.Characteristic.GeneralCharacteristicEntity", "GeneralCharacteristicEntity")
+                        .WithMany()
+                        .HasForeignKey("GeneralCharacteristicEntityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("iShopMainVer2.Models.Entity.Characteristic.MaterialsEntity", "MaterialsEntity")
+                        .WithMany()
+                        .HasForeignKey("MaterialsEntityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("iShopMainVer2.Models.Entity.Characteristic.MemoryAndProcessorEntity", "MemoryAndProcessorEntity")
+                        .WithMany()
+                        .HasForeignKey("MemoryAndProcessorEntityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("iShopMainVer2.Models.Entity.Characteristic.PowerEntity", "PowerEntity")
+                        .WithMany()
+                        .HasForeignKey("PowerEntityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("iShopMainVer2.Models.Entity.Characteristic.ScreenEntity", "ScreenEntity")
+                        .WithMany()
+                        .HasForeignKey("ScreenEntityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CameraEntity");
+
+                    b.Navigation("GeneralCharacteristicEntity");
+
+                    b.Navigation("MaterialsEntity");
+
+                    b.Navigation("MemoryAndProcessorEntity");
+
+                    b.Navigation("PowerEntity");
+
+                    b.Navigation("ScreenEntity");
+                });
+
+            modelBuilder.Entity("iShopMainVer2.Models.Entity.Order.AddressEntity", b =>
                 {
                     b.HasOne("iShopMainVer2.Models.Entity.Order.OrderEntity", null)
-                        .WithMany("Elements")
-                        .HasForeignKey("OrderEntityId");
+                        .WithOne("Address")
+                        .HasForeignKey("iShopMainVer2.Models.Entity.Order.AddressEntity", "Id")
+                        .HasPrincipalKey("iShopMainVer2.Models.Entity.Order.OrderEntity", "AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
 
-                    b.HasOne("iShopMainVer2.Models.Entity.Products.ProductEntity", null)
+            modelBuilder.Entity("iShopMainVer2.Models.Entity.Order.ElementOrderEntity", b =>
+                {
+                    b.HasOne("iShopMainVer2.Models.Entity.Order.OrderEntity", "Order")
+                        .WithMany("ElementsOrders")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("iShopMainVer2.Models.Entity.Products.ProductEntity", "Product")
                         .WithMany("ElementOrders")
-                        .HasForeignKey("ProductEntityId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("iShopMainVer2.Models.Entity.Order.OrderEntity", b =>
                 {
-                    b.HasOne("iShopMain.Models.Entity.UserInfo.UserEntity", null)
+                    b.HasOne("iShopMain.Models.Entity.UserInfo.UserEntity", "User")
                         .WithMany("OrderList")
-                        .HasForeignKey("UserEntityId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("iShopMainVer2.Models.Entity.Products.ProductEntity", b =>
+                {
+                    b.HasOne("iShopMainVer2.Models.Entity.Characteristic.CharacteristicEntity", "Characteristic")
+                        .WithMany()
+                        .HasForeignKey("CharacteristicId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("iShopMainVer2.Models.Entity.Products.OverviewEntity", "Overview")
+                        .WithMany()
+                        .HasForeignKey("OverviewId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Characteristic");
+
+                    b.Navigation("Overview");
                 });
 
             modelBuilder.Entity("iShopMainVer2.Models.Entity.Products.SelectedProductEntity", b =>
                 {
-                    b.HasOne("iShopMainVer2.Models.Entity.Products.ProductEntity", null)
+                    b.HasOne("iShopMainVer2.Models.Entity.Products.ProductEntity", "Product")
                         .WithMany("SelectedProducts")
-                        .HasForeignKey("ProductEntityId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("iShopMain.Models.Entity.UserInfo.UserEntity", null)
+                    b.HasOne("iShopMain.Models.Entity.UserInfo.UserEntity", "User")
                         .WithMany("SelectedProducts")
-                        .HasForeignKey("UserEntityId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("iShopMain.Models.Entity.UserInfo.UserEntity", b =>
@@ -489,7 +679,10 @@ namespace iShopMainVer2.Migrations
 
             modelBuilder.Entity("iShopMainVer2.Models.Entity.Order.OrderEntity", b =>
                 {
-                    b.Navigation("Elements");
+                    b.Navigation("Address")
+                        .IsRequired();
+
+                    b.Navigation("ElementsOrders");
                 });
 
             modelBuilder.Entity("iShopMainVer2.Models.Entity.Products.ProductEntity", b =>

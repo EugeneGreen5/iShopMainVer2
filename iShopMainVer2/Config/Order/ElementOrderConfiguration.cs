@@ -10,6 +10,13 @@ public class ElementOrderConfiguration : BaseEntityConfiguration<ElementOrderEnt
     {
         builder.ToTable("element_order");
 
-        builder.HasKey(x => new { x.ProductID, x.OrderId });
+        builder.HasKey(x => new { x.ProductId, x.OrderId });
+        builder.HasOne(x => x.Product)
+            .WithMany(x => x.ElementOrders)
+            .HasForeignKey(x => x.ProductId);
+
+        builder.HasOne(x => x.Order)
+            .WithMany(x => x.ElementsOrders)
+            .HasForeignKey(x => x.OrderId);
     }
 }

@@ -10,5 +10,5 @@ public class OrderEntity : BaseEntity
     public Guid AddressId { get; set; }
     public virtual UserEntity User { get; set; }
     public virtual AddressEntity Address { get; set; }
-    public virtual ICollection<ElementOrderEntity> Elements { get; set; } = new List<ElementOrderEntity>();
+    public virtual ICollection<ElementOrderEntity> ElementsOrders { get; set; } = new List<ElementOrderEntity>();
 }

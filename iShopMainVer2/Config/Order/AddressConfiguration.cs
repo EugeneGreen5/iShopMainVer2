@@ -9,5 +9,6 @@ public class AddressConfiguration : BaseEntityConfiguration<AddressEntity>
     public override void ConfigEntity(EntityTypeBuilder<AddressEntity> builder)
     {
         builder.ToTable("address");
+        
     }
 }

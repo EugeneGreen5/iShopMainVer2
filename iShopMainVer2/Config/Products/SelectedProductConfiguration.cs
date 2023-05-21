@@ -10,5 +10,11 @@ public class SelectedProductConfiguration : BaseEntityConfiguration<SelectedProd
     {
         builder.ToTable("selected_product");
         builder.HasKey(x => new {x.ProductId, x.UserId});
+        builder.HasOne(x => x.Product)
+            .WithMany(x => x.SelectedProducts)
+            .HasForeignKey(x => x.ProductId);
+        builder.HasOne(x => x.User)
+            .WithMany(x => x.SelectedProducts)
+            .HasForeignKey(x => x.UserId);
     }
 }
