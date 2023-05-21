@@ -1,4 +1,4 @@
-﻿    using iShopMainVer2.Models.Entity;
+﻿using iShopMainVer2.Models.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

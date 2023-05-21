@@ -1,9 +1,9 @@
-﻿using iShopMain.Models.Dto;
-using iShopMain.Models.Dto.RequestDto;
-using iShopMain.Services;
+﻿using iShopMainVer2.Models.Dto;
+using iShopMainVer2.Models.Dto.RequestDto;
+using iShopMainVer2.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace iShopMain.Controllers
+namespace iShopMainVer2.Controllers
 {
     
     [ApiController]

@@ -1,4 +1,4 @@
-﻿namespace iShopMain.Models.Dto
+﻿namespace iShopMainVer2.Models.Dto
 {
     public class AuthorizationUserDto : IDto
     {

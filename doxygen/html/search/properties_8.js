@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['id_0',['Id',['../classi_shop_main_ver2_1_1_models_1_1_dto_1_1_authorization_user_dto.html#a7d9f6b4f3d5f48ddf6f2e853e15fbb1d',1,'iShopMainVer2.Models.Dto.AuthorizationUserDto.Id'],['../interfacei_shop_main_ver2_1_1_models_1_1_dto_1_1_i_dto.html#a7b4aa39e879219a8d9d45e8c765d7db0',1,'iShopMainVer2.Models.Dto.IDto.Id'],['../classi_shop_main_ver2_1_1_models_1_1_dto_1_1_registration_user_dto.html#ac95ea2ed02e4bec6d6821df930dd31f2',1,'iShopMainVer2.Models.Dto.RegistrationUserDto.Id'],['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_base_entity.html#a6418d8fb850caeed94ba6d5363a87739',1,'iShopMainVer2.Models.Entity.BaseEntity.Id']]],
+  ['index_1',['Index',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_order_1_1_address_entity.html#abde2bd8f2f8868f93cbcc0117faefb82',1,'iShopMainVer2::Models::Entity::Order::AddressEntity']]],
+  ['information_2',['Information',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_user_info_1_1_user_entity.html#aef2866f0fb8655ce30fb4459aea6271c',1,'iShopMainVer2::Models::Entity::UserInfo::UserEntity']]],
+  ['informationid_3',['InformationId',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_user_info_1_1_user_entity.html#a4cc46752e21f14c063a5cb55913b8882',1,'iShopMainVer2::Models::Entity::UserInfo::UserEntity']]],
+  ['informations_4',['Informations',['../classi_shop_main_ver2_1_1_data_1_1_application_db_context.html#a6873e781e9751e7645e4e009bf4b4e1e',1,'iShopMainVer2::Data::ApplicationDbContext']]],
+  ['isfastcharging_5',['IsFastCharging',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_power_entity.html#a44a44d332f4aa76c0ea132f71e8f2768',1,'iShopMainVer2::Models::Entity::Characteristic::PowerEntity']]],
+  ['ispowerunit_6',['IsPowerUnit',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_power_entity.html#a13fb63409a361fc02f77b7642e4e3329',1,'iShopMainVer2::Models::Entity::Characteristic::PowerEntity']]],
+  ['istouchscreen_7',['IsTouchScreen',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_screen_entity.html#a662b8a2c25a71f3ec76edba6bfc7fb1d',1,'iShopMainVer2::Models::Entity::Characteristic::ScreenEntity']]],
+  ['iswirelesscharging_8',['IsWirelessCharging',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_power_entity.html#ac571311ac1610cf64b8ce9fa94aca3ae',1,'iShopMainVer2::Models::Entity::Characteristic::PowerEntity']]]
+];

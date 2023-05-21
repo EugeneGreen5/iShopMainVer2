@@ -2,7 +2,7 @@
 using iShopMainVer2.Models.Entity.Order;
 using iShopMainVer2.Models.Entity.Products;
 
-namespace iShopMain.Models.Entity.UserInfo;
+namespace iShopMainVer2.Models.Entity.UserInfo;
 
 public class UserEntity : BaseEntity
 {

@@ -1,6 +1,6 @@
 ﻿using iShopMainVer2.Models.Entity;
 
-namespace iShopMain.Models.Entity.UserInfo
+namespace iShopMainVer2.Models.Entity.UserInfo
 {
     public class InformationEntity : BaseEntity
     {

@@ -1,5 +1,5 @@
-﻿using iShopMain.Helpers;
-using iShopMain.Models.Entity.UserInfo;
+﻿using iShopMainVer2.Helpers;
+using iShopMainVer2.Models.Entity.UserInfo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Reflection.Emit;

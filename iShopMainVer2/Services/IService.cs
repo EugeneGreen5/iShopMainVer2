@@ -1,7 +1,7 @@
-﻿using iShopMain.Models.Dto;
-using iShopMain.Models.Dto.RequestDto;
+﻿using iShopMainVer2.Models.Dto;
+using iShopMainVer2.Models.Dto.RequestDto;
 
-namespace iShopMain.Services
+namespace iShopMainVer2.Services
 {
     public interface IService
     {

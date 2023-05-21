@@ -1,7 +1,7 @@
-﻿using iShopMain.Models.Entity.UserInfo;
+﻿using iShopMainVer2.Models.Entity.UserInfo;
 using System.Linq.Expressions;
 
-namespace iShopMain.Repositories.User;
+namespace iShopMainVer2.Repositories.User;
 
 public interface IRepository<T> : IDisposable
     where T : class

@@ -1,0 +1,13 @@
+var searchData=
+[
+  ['maincamera_0',['MainCamera',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_camera_entity.html#ae11670d82aea0e03201219e0c6236329',1,'iShopMainVer2::Models::Entity::Characteristic::CameraEntity']]],
+  ['materialbody_1',['MaterialBody',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_materials_entity.html#acb6ac8748a5cf7669d67f2705b0e63df',1,'iShopMainVer2::Models::Entity::Characteristic::MaterialsEntity']]],
+  ['materialid_2',['MaterialId',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_characteristic_entity.html#aa1057164f562ac3ed60299a4e8f748b7',1,'iShopMainVer2::Models::Entity::Characteristic::CharacteristicEntity']]],
+  ['materialsentity_3',['MaterialsEntity',['../classi_shop_main_ver2_1_1_data_1_1_application_db_context.html#ab24cb66e88729592d4f49039ed4d8762',1,'iShopMainVer2.Data.ApplicationDbContext.MaterialsEntity'],['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_characteristic_entity.html#a0b01a2503f6460cb5debf92b547d7f8d',1,'iShopMainVer2.Models.Entity.Characteristic.CharacteristicEntity.MaterialsEntity']]],
+  ['maximumfrequencyvideo_4',['MaximumFrequencyVideo',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_camera_entity.html#a5e3a5bacd426efaae951964e4544ae22',1,'iShopMainVer2::Models::Entity::Characteristic::CameraEntity']]],
+  ['maximumresolutionvideo_5',['MaximumResolutionVideo',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_camera_entity.html#a4211a37d353942b0bc4e3d017e962d04',1,'iShopMainVer2::Models::Entity::Characteristic::CameraEntity']]],
+  ['memoryandprocessorentity_6',['MemoryAndProcessorEntity',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_characteristic_entity.html#a18827c5c3f21ef975a9f2b47b1991b8a',1,'iShopMainVer2::Models::Entity::Characteristic::CharacteristicEntity']]],
+  ['memoryandprocessorid_7',['MemoryAndProcessorId',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_characteristic_entity.html#a08fd283bec5454461040ba5eff72fa8b',1,'iShopMainVer2::Models::Entity::Characteristic::CharacteristicEntity']]],
+  ['memoryandprocessors_8',['MemoryAndProcessors',['../classi_shop_main_ver2_1_1_data_1_1_application_db_context.html#a83ec46c670286d7c7b04bbf95d8e58aa',1,'iShopMainVer2::Data::ApplicationDbContext']]],
+  ['messagerequest_9',['MessageRequest',['../classi_shop_main_ver2_1_1_models_1_1_dto_1_1_request_dto_1_1_user_request_dto.html#a2eafe179f27a1a270b63d96c44d93585',1,'iShopMainVer2::Models::Dto::RequestDto::UserRequestDto']]]
+];

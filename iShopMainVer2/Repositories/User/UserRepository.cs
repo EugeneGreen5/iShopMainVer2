@@ -1,10 +1,10 @@
-﻿using iShopMain.Data;
-using iShopMain.Models.Entity.UserInfo;
-using iShopMain.Repositories.User;
+﻿using iShopMainVer2.Data;
+using iShopMainVer2.Models.Entity.UserInfo;
+using iShopMainVer2.Repositories.User;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace iShopMain.Repositories
+namespace iShopMainVer2.Repositories
 {
     public class UserRepository : IRepository<UserEntity>
     {

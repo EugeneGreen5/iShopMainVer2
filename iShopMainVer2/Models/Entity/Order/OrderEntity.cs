@@ -1,4 +1,4 @@
-﻿using iShopMain.Models.Entity.UserInfo;
+﻿using iShopMainVer2.Models.Entity.UserInfo;
 
 namespace iShopMainVer2.Models.Entity.Order;
 

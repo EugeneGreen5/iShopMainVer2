@@ -1,6 +1,6 @@
-﻿using iShopMain.Models.Entity.UserInfo;
+﻿using iShopMainVer2.Models.Entity.UserInfo;
 
-namespace iShopMain.Models.Dto
+namespace iShopMainVer2.Models.Dto
 {
     public class RegistrationUserDto : IDto
     {

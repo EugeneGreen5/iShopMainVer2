@@ -1,4 +1,4 @@
-﻿namespace iShopMain.Models.Dto.RequestDto
+﻿namespace iShopMainVer2.Models.Dto.RequestDto
 {
     public class UserRequestDto
     {

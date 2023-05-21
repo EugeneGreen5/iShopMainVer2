@@ -1,12 +1,12 @@
-﻿using iShopMain.Helpers;
-using iShopMain.Models.Dto;
-using iShopMain.Models.Dto.RequestDto;
-using iShopMain.Models.Entity.UserInfo;
-using iShopMain.Repositories.User;
+﻿using iShopMainVer2.Helpers;
+using iShopMainVer2.Models.Dto;
+using iShopMainVer2.Models.Dto.RequestDto;
+using iShopMainVer2.Models.Entity.UserInfo;
+using iShopMainVer2.Repositories.User;
 
 
 
-namespace iShopMain.Services;
+namespace iShopMainVer2.Services;
 
 public class UserService : IService
 {

@@ -1,13 +1,15 @@
-﻿using iShopMain.Helpers;
-using iShopMain.Models.Entity.UserInfo;
+﻿using iShopMainVer2.Helpers;
+using iShopMainVer2.Models.Entity.UserInfo;
 using iShopMainVer2.Models.Entity.Characteristic;
+using iShopMainVer2.Models.Entity.Order;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
-namespace iShopMain.Data
+namespace iShopMainVer2.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        public DbSet<AddressEntity> Address { get; set; }
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<AccountEntity> Accounts { get; set; }
         public DbSet<InformationEntity> Informations { get; set; }
@@ -24,7 +26,10 @@ namespace iShopMain.Data
             Database.EnsureCreated();
 
         }
-
+        /// <summary>
+        /// Connect all config to db and init fake data
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);

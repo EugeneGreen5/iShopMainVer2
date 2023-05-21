@@ -1,0 +1,18 @@
+var searchData=
+[
+  ['saveasync_0',['SaveAsync',['../classi_shop_main_ver2_1_1_repositories_1_1_user_1_1_account_repository.html#a1495d7e97c78cb32ae62e673afbb731f',1,'iShopMainVer2.Repositories.User.AccountRepository.SaveAsync()'],['../classi_shop_main_ver2_1_1_repositories_1_1_user_1_1_information_repository.html#a122177bd5631c6152a6a41556527e56e',1,'iShopMainVer2.Repositories.User.InformationRepository.SaveAsync()'],['../interfacei_shop_main_ver2_1_1_repositories_1_1_user_1_1_i_repository.html#a4a775f7af7a78c55ca8d8e62bfd7ea4d',1,'iShopMainVer2.Repositories.User.IRepository.SaveAsync()'],['../classi_shop_main_ver2_1_1_repositories_1_1_user_repository.html#a1b6aa8ce1663e513d7bfae51a1572be8',1,'iShopMainVer2.Repositories.UserRepository.SaveAsync()']]],
+  ['screenconfiguration_1',['ScreenConfiguration',['../classi_shop_main_ver2_1_1_config_1_1_characteristic_1_1_screen_configuration.html',1,'iShopMainVer2::Config::Characteristic']]],
+  ['screenconfiguration_2ecs_2',['ScreenConfiguration.cs',['../_screen_configuration_8cs.html',1,'']]],
+  ['screenentity_3',['ScreenEntity',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_screen_entity.html',1,'iShopMainVer2.Models.Entity.Characteristic.ScreenEntity'],['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_characteristic_entity.html#abffc165e4e00e2ea4afeaade0335348d',1,'iShopMainVer2.Models.Entity.Characteristic.CharacteristicEntity.ScreenEntity']]],
+  ['screenentity_2ecs_4',['ScreenEntity.cs',['../_screen_entity_8cs.html',1,'']]],
+  ['screenid_5',['ScreenId',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_characteristic_entity.html#a07469b51b055f0f57e41fc1b84d728a5',1,'iShopMainVer2::Models::Entity::Characteristic::CharacteristicEntity']]],
+  ['screens_6',['Screens',['../classi_shop_main_ver2_1_1_data_1_1_application_db_context.html#a89c1cccd9bf5bfa8809c9a2cbd1cc3ed',1,'iShopMainVer2::Data::ApplicationDbContext']]],
+  ['selectedproductconfiguration_7',['SelectedProductConfiguration',['../classi_shop_main_ver2_1_1_config_1_1_product_1_1_selected_product_configuration.html',1,'iShopMainVer2::Config::Product']]],
+  ['selectedproductconfiguration_2ecs_8',['SelectedProductConfiguration.cs',['../_selected_product_configuration_8cs.html',1,'']]],
+  ['selectedproductentity_9',['SelectedProductEntity',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_products_1_1_selected_product_entity.html',1,'iShopMainVer2::Models::Entity::Products']]],
+  ['selectedproductentity_2ecs_10',['SelectedProductEntity.cs',['../_selected_product_entity_8cs.html',1,'']]],
+  ['selectedproducts_11',['SelectedProducts',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_products_1_1_product_entity.html#a0677a6c3fd71bd8441886e375d913dbd',1,'iShopMainVer2.Models.Entity.Products.ProductEntity.SelectedProducts'],['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_user_info_1_1_user_entity.html#abfbd9f382fa9b22ffe6b2375b10f2a2a',1,'iShopMainVer2.Models.Entity.UserInfo.UserEntity.SelectedProducts']]],
+  ['size_12',['Size',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_characteristic_1_1_general_characteristic_entity.html#a1456adec97bfd86861298cfb9a523867',1,'iShopMainVer2::Models::Entity::Characteristic::GeneralCharacteristicEntity']]],
+  ['street_13',['Street',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_order_1_1_address_entity.html#af44eced41e441ac1eb7b5282584d96c1',1,'iShopMainVer2::Models::Entity::Order::AddressEntity']]],
+  ['surname_14',['Surname',['../classi_shop_main_ver2_1_1_models_1_1_entity_1_1_user_info_1_1_information_entity.html#aadee9f561349ff083edf30b5498369e9',1,'iShopMainVer2::Models::Entity::UserInfo::InformationEntity']]]
+];
